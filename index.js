@@ -1,4 +1,4 @@
- // Header scroll effect
+// Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 100) {
@@ -12,10 +12,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const mobileMenu = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
-if(mobileMenu && navLinks){
-    // Hamburger menu code here
-}
-
 
 if (mobileMenu && navLinks) {
   // Existing hamburger menu code
@@ -289,11 +285,3 @@ window.addEventListener('click', (e) => {
 
  
 
-
-
-
-
-
-
-// Stats Counter Animation
-// (Removed duplicate block to avoid redeclaration error)
