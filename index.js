@@ -282,6 +282,35 @@ window.addEventListener('click', (e) => {
     showSlide(currentSlide);
   };
 
+// Mobile Gallery Popup
+const galleryItems = document.querySelectorAll('.gallery-item');
+const popup = document.getElementById('galleryPopup');
+const popupImg = document.getElementById('popupImg');
+const popupTitle = document.getElementById('popupTitle');
+const popupDesc = document.getElementById('popupDesc');
+const closePopup = document.getElementById('closePopup');
+
+galleryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    popup.style.display = 'flex';
+    popupImg.src = item.style.backgroundImage.slice(5, -2); // extract url from CSS
+    popupTitle.textContent = item.dataset.title;
+    popupDesc.textContent = item.dataset.desc;
+    document.body.style.overflow = "hidden"; // prevent scrolling
+  });
+});
+
+closePopup.addEventListener('click', () => {
+  popup.style.display = 'none';
+  document.body.style.overflow = "auto";
+});
+
+window.addEventListener('click', e => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
+    document.body.style.overflow = "auto";
+  }
+});
 
  
 

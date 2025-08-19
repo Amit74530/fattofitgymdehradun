@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fat2Fit | Premium Fitness Training | Dehradun</title>
 
+
   <!-- Font Awesome All (Solid + Brands + Regular) -->
 <link
   rel="stylesheet"
@@ -90,6 +91,14 @@
   }
   </script>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-55LH43GFPY');
+  </script>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -203,6 +212,12 @@
   <div class="achievement-badge" data-popup="popup-north">
     🥉 MR. NORTH INDIA 2021
   </div>
+  <div class="achievement-badge" data-popup="popup-up">
+    🏆 MR. UP Champion of Champions
+  </div>
+  <div class="achievement-badge" data-popup="popup-himalaya">
+    🏔️ MR. Himalaya Champion of Champions
+  </div>
 </div>
 
 
@@ -230,12 +245,66 @@
             <p>Achieved 3rd position in the North India Championship 2021, showcasing exceptional performance against competitors from across the region.</p>
           </div>
         </div>
+<div class="achievement-popup" id="popup-up">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <h3>🏆 MR. UP Champion of Champions</h3>
+    <p>Secured the prestigious Champion of Champions title in Uttar Pradesh, proving unmatched consistency, physique, and dedication in competitive bodybuilding.</p>
+  </div>
+</div>
+
+<div class="achievement-popup" id="popup-himalaya">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <h3>🏔️ MR. Himalaya Champion of Champions</h3>
+    <p>Achieved the coveted Champion of Champions title at the Himalaya competition, recognized for peak conditioning and performance among top athletes.</p>
+  </div>
+</div>
 
         <div class="signature">Parshant Veer Singh</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Gallery Section -->
+<section class="gallery" id="gallery">
+  <h2 class="section-title">Explore Our Gym</h2>
+  <div class="gallery-grid">
+
+    <div class="gallery-item" data-title="Leg Curl Machine" data-desc="Strengthen hamstrings with isolation precision." style="background-image:url('galary/galary 1.jpg')">
+      <div class="container__info"></div>
+    </div>
+
+    <div class="gallery-item" data-title="Cardio Treadmills" data-desc="Push stamina with premium treadmill zones." style="background-image:url('galary/galary 2.jpg')">
+      <div class="container__info"></div>
+    </div>
+
+    <div class="gallery-item" data-title="Strength Zone" data-desc="Build mass using plate-loaded power gear." style="background-image:url('galary/galary 3.jpg')">
+      <div class="container__info"></div>
+    </div>
+
+    <div class="gallery-item" data-title="Gym Layout" data-desc="Clean, spacious and powerful energy space." style="background-image:url('galary/galary 4.jpg')">
+      <div class="container__info"></div>
+    </div>
+
+    <div class="gallery-item" data-title="Cycling Zone" data-desc="Boost endurance with advanced spin bikes." style="background-image:url('galary/galary 5.jpg')">
+      <div class="container__info"></div>
+    </div>
+
+  </div>
+
+  <!-- Fullscreen Popup -->
+  <div class="gallery-popup" id="galleryPopup">
+    <button class="close-btn" id="closePopup"></button>
+    <img id="popupImg" src="" alt="">
+    <div class="popup-text">
+      <h3 id="popupTitle"></h3>
+      <p id="popupDesc"></p>
+    </div>
+  </div>
+</section>
+
 
 
     <!-- Services Section -->
@@ -466,45 +535,6 @@
            <a class="btn btn-primary" target="_blank" href="https://wa.me/918979171558?text=Hi%20Parshant!%20I%20want%20to%20book%20a%20free%20training%20session.%20Can%20you%20please%20help%20me%20with%20the%20details?">Book Free Session</a>
         </div>
     </section>
-
-
-    <section class="gallery-carousel" id="gallery">
-  <h2 class="section-title">Explore Our Gym</h2>
-  <div class="gallery-track">
-    <div class="gallery-card" style="background-image: url('galary/galary 1.jpg')">
-      <div class="gallery-info">
-        <h3>Leg Curl Machine</h3>
-        <p>Strengthen hamstrings with isolation precision.</p>
-      </div>
-    </div>
-    <div class="gallery-card" style="background-image: url('galary/galary 2.jpg')">
-      <div class="gallery-info">
-        <h3>Cardio Treadmills</h3>
-        <p>Push stamina with premium treadmill zones.</p>
-      </div>
-    </div>
-    <div class="gallery-card" style="background-image: url('galary/galary 3.jpg')">
-      <div class="gallery-info">
-        <h3>Strength Zone</h3>
-        <p>Build mass using plate-loaded power gear.</p>
-      </div>
-    </div>
-    <div class="gallery-card" style="background-image: url('galary/galary 4.jpg')">
-      <div class="gallery-info">
-        <h3>Gym Layout</h3>
-        <p>Clean, spacious and powerful energy space.</p>
-      </div>
-    </div>
-    <div class="gallery-card" style="background-image: url('galary/galary 5.jpg')">
-      <div class="gallery-info">
-        <h3>Cycling Zone</h3>
-        <p>Boost endurance with advanced spin bikes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 
     <!-- Footer -->
     <footer>
