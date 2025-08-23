@@ -166,22 +166,53 @@
   font-size: 1.1rem;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+/* Horizontal Scroll Wrapper */
+.gallery-slider-wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 15px;
 }
 
+.gallery-slider-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  scroll-snap-align: start;
+  padding-inline: 10px;
+}
+
+/* Gallery Item */
 .gallery-item {
-  position: relative;
-  height: 220px;
+  flex: 0 0 auto;
+  width: 380px;     /* Bigger size for desktop */
+  height: 260px;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  overflow: hidden;
+  position: relative;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+/* ===========================
+   Gallery Items (New Styling)
+   =========================== */
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 380px;
+  height: 260px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  scroll-snap-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 .gallery-item:hover {
@@ -189,63 +220,63 @@
   box-shadow: 0 12px 35px rgba(0,0,0,0.5);
 }
 
-/* Popup */
-.gallery-popup {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  z-index: 10000;
-  padding: 20px;
-}
-
-.gallery-popup img {
-  max-width: 90%;
-  max-height: 70vh;
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
-
-.gallery-popup .popup-text {
-  color: #fff;
-  text-align: center;
-  max-width: 600px;
-}
-
-.gallery-popup .popup-text h3 {
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.gallery-popup .close-btn {
+/* Overlay container */
+.gallery-item .overlay {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: center;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* Show overlay on hover (desktop) */
+.gallery-item:hover .overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Mobile tap effect */
+@media (max-width: 768px) {
+  .gallery-item:active .overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Overlay text */
+.gallery-item .overlay h3 {
+  color: var(--accent);   /* brand accent */
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.gallery-item .overlay p {
   color: #fff;
-  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 /* ===========================
-   Mobile Responsive Styles
+   Responsive Adjustments
    =========================== */
 
-/* Tablets (max-width: 992px) */
+/* Tablets */
 @media (max-width: 992px) {
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
   .gallery-item {
-    height: 200px;
+    width: 320px;
+    height: 220px;
   }
 }
 
-/* Mobiles (max-width: 768px) */
+/* Mobiles */
 @media (max-width: 768px) {
   .gallery {
     padding: 60px 15px;
@@ -257,28 +288,40 @@
     font-size: 1rem;
   }
   .gallery-item {
-    height: 180px;
+    width: 280px;
+    height: 200px;
+  }
+  .gallery-item .overlay h3 {
+    font-size: 1rem;
+  }
+  .gallery-item .overlay p {
+    font-size: 0.85rem;
   }
 }
 
-/* Small Mobiles (max-width: 480px) */
+/* Small Mobiles */
 @media (max-width: 480px) {
-  .gallery-grid {
-    grid-template-columns: 1fr; /* single column */
-  }
   .gallery-item {
-    height: 200px;
-    border-radius: 15px;
+    width: 240px;
+    height: 180px;
   }
-  .gallery-popup img {
-    max-width: 100%;
-    max-height: 60vh;
+  .gallery-item .overlay {
+    padding: 12px;
   }
-  .gallery-popup .popup-text {
+  .gallery-item .overlay h3 {
     font-size: 0.95rem;
-    padding: 0 10px;
+  }
+  .gallery-item .overlay p {
+    font-size: 0.8rem;
   }
 }
+
+
+/* Hide scrollbar */
+.gallery-slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 
 
 
